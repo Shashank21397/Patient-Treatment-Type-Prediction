@@ -105,7 +105,3 @@ Deploy on cloud (Heroku, PythonAnywhere, or AWS)
 This project is licensed under the MIT License – feel free to use and modify it.
 
 ---
-
-⚡ If you replace your current README.md with this one, GitHub will render it with **big titles, sub-headings, bullet points, and code blocks** exactly like professional repos.  
-
-Do you also want me to **generate a `requirements.txt`** for you so users can install dependencies without guessing?
