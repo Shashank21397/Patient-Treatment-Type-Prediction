@@ -58,7 +58,7 @@ Patient_treatment_type_Prediction/
 3. Install dependencies
 pip install -r requirements.txt
 
-# If requirements.txt is missing, install manually:
+If requirements.txt is missing, install manually:
 
 pip install django pandas
 
