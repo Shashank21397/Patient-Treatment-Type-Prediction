@@ -56,24 +56,25 @@ Patient_treatment_type_Prediction/
    venv\Scripts\activate      # On Windows
 
 3. Install dependencies
-pip install -r requirements.txt
+
+   pip install -r requirements.txt
 
 4. If requirements.txt is missing, install manually:
 
-pip install django pandas
+   pip install django pandas
 
 5. Run migrations
 
-python manage.py migrate
+   python manage.py migrate
 
 6. Start the development server
 
-python manage.py runserver
+   python manage.py runserver
 
 
 7. Open in browser
 
-http://127.0.0.1:8000/
+   http://127.0.0.1:8000/
 
 ---
 
