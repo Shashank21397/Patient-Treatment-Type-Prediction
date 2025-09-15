@@ -58,23 +58,24 @@ Patient_treatment_type_Prediction/
 3. Install dependencies
 pip install -r requirements.txt
 
-If requirements.txt is missing, install manually:
+4. If requirements.txt is missing, install manually:
 
 pip install django pandas
 
-4. Run migrations
+5. Run migrations
 
 python manage.py migrate
 
-
-5. Start the development server
+6. Start the development server
 
 python manage.py runserver
 
 
-6. Open in browser
+7. Open in browser
 
 http://127.0.0.1:8000/
+
+---
 
 🎯 Usage
 
@@ -83,6 +84,8 @@ Go to the home page
 Enter patient condition details
 
 The system predicts whether the patient requires In-care or Out-care treatment
+
+---
 
 📌 Future Improvements
 
@@ -93,6 +96,8 @@ Add more medical condition features for better accuracy
 Implement authentication for doctors/admins
 
 Deploy on cloud (Heroku, PythonAnywhere, or AWS)
+
+---
 
 📝 License
 
