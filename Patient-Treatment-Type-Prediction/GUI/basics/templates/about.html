@@ -1,0 +1,166 @@
+{% block content %}
+<html>
+  <head>
+    <style>
+      body {
+        font-family: 'Open Sans', sans-serif;
+        margin: 0;
+        padding: 0;
+        background-color: #f0f4f8;
+        background-image: url('basics\\templates\\backimage.jpg');
+        background-size: cover;
+        background-position: center;
+        background-repeat: no-repeat;
+      }
+
+      h1 {
+        text-align: center;
+        color: #2c3e50;
+        margin-top: 30px;
+        font-family: 'Lobster', cursive;
+        font-size: 32px;
+      }
+
+      form {
+        max-width: 650px;
+        margin: 40px auto;
+        background-color: rgba(255, 255, 255, 0.95);
+        padding: 30px 40px;
+        border-radius: 16px;
+        box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+        display: flex;
+        flex-direction: column;
+        gap: 15px;
+      }
+
+      label {
+        color: #333;
+        font-size: 15px;
+        margin-bottom: 5px;
+      }
+
+      input[type="text"] {
+        padding: 10px 12px;
+        border-radius: 8px;
+        border: 1px solid #ccc;
+        font-size: 14px;
+        outline: none;
+        transition: 0.3s;
+      }
+
+      input[type="text"]:hover,
+      input[type="text"]:focus {
+        border-color: #3498db;
+        box-shadow: 0 0 5px rgba(52, 152, 219, 0.3);
+      }
+
+      .radio-group {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        margin-top: -5px;
+      }
+
+      .radio-option {
+        display: flex;
+        align-items: center;
+        gap: 6px;
+        font-size: 14px;
+      }
+
+      button {
+        background-color: #2ecc71;
+        color: white;
+        padding: 12px 20px;
+        border: none;
+        border-radius: 8px;
+        font-size: 16px;
+        cursor: pointer;
+        margin-top: 10px;
+        transition: background 0.3s;
+      }
+
+      button:hover {
+        background-color: #27ae60;
+      }
+
+      h3 {
+        color: #2c3e50;
+        text-align: center;
+        margin-top: 20px;
+      }
+
+      p.error-message {
+        color: red;
+        font-size: 14px;
+        text-align: center;
+      }
+
+      @media (max-width: 600px) {
+        form {
+          padding: 20px;
+        }
+
+        .radio-group {
+          flex-direction: column;
+          align-items: flex-start;
+        }
+      }
+    </style>
+    <link href="https://fonts.googleapis.com/css2?family=Open+Sans:wght@400&family=Lobster&display=swap" rel="stylesheet">
+  </head>
+  <body>
+    <h1>Patient Treatment Type Prediction</h1>
+    <form method="post">
+      {% csrf_token %}
+
+      <label for="HAEMATOCRIT">Haematocrit Value:</label>
+      <input type="text" id="HAEMATOCRIT" name="HAEMATOCRIT" />
+
+      <label for="HAEMOGLOBINS">Haemoglobin:</label>
+      <input type="text" id="HAEMOGLOBINS" name="HAEMOGLOBINS" />
+
+      <label for="ERYTHROCYTE">Erythrocyte:</label>
+      <input type="text" id="ERYTHROCYTE" name="ERYTHROCYTE" />
+
+      <label for="LEUCOCYTE">Leukocyte:</label>
+      <input type="text" id="LEUCOCYTE" name="LEUCOCYTE" />
+
+      <label for="THROMBOCYTE">Thrombocyte:</label>
+      <input type="text" id="THROMBOCYTE" name="THROMBOCYTE" />
+
+      <label for="MCH">MCH:</label>
+      <input type="text" id="MCH" name="MCH" />
+
+      <label for="MCHC">MCHC:</label>
+      <input type="text" id="MCHC" name="MCHC" />
+
+      <label for="MCV">MCV:</label>
+      <input type="text" id="MCV" name="MCV" />
+
+      <label for="AGE">Age:</label>
+      <input type="text" id="AGE" name="AGE" />
+
+      <label for="SEX">Gender:</label>
+      <div class="radio-group">
+        <div class="radio-option">
+          <input type="radio" id="male" name="Gender" value="1" />
+          <label for="male">Male</label>
+        </div>
+        <div class="radio-option">
+          <input type="radio" id="female" name="Gender" value="0" />
+          <label for="female">Female</label>
+        </div>
+      </div>
+
+      <button type="submit" name="submitbutton">Submit</button>
+
+      <h3>SOURCE: {{ result_text }}</h3>
+
+      {% if error_message %}
+        <p class="error-message">{{ error_message }}</p>
+      {% endif %}
+    </form>
+  </body>
+</html>
+{% endblock content %}
